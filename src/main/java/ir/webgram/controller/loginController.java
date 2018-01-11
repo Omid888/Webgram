@@ -4,6 +4,7 @@ import ir.webgram.model.dto.Channel;
 import ir.webgram.model.dto.Login;
 import ir.webgram.model.dto.User;
 import ir.webgram.model.service.MembershipService;
+import ir.webgram.model.service.PostService;
 import ir.webgram.model.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,9 @@ public class loginController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private PostService postService;
 
     @Autowired
     private MembershipService membershipService;
@@ -50,6 +54,7 @@ public class loginController {
                 return "login";
             } else {
                 user.setChannels(membershipService.findAllChannelByUserId(user.getId()));
+                user.setPosts(postService.getFeed(user));
                 session.setAttribute("user", user);
                 model.addAttribute("channel", new Channel());
                 return "home";

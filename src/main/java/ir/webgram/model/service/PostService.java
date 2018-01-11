@@ -1,6 +1,7 @@
 package ir.webgram.model.service;
 
 import ir.webgram.model.dto.Post;
+import ir.webgram.model.dto.User;
 import ir.webgram.model.entity.ChannelEntity;
 import ir.webgram.model.entity.PostEntity;
 import ir.webgram.model.entity.UserEntity;
@@ -54,24 +55,11 @@ public class PostService {
         if (list.isEmpty())
             return null;
 
-        List<Post> posts = new ArrayList<>();
-        for (PostEntity e:list){
-            Post p = new Post();
-            p.setId(e.getId());
-            p.setTitle(e.getTitle());
-            p.setContent(e.getContent());
-            p.setUrl(e.getUrl());
-            p.setImageUrl(e.getImageUrl());
-            p.setDate(e.getDate());
-            p.setWriterName(e.getWriter().getName());
-
-            posts.add(p);
-        }
-
-        return posts;
+        return posts(list);
     }
 
     public List<Post> findByChannelId(Integer channelId, Integer pageStart, Integer limit){
+        // TODO: 1/11/2018 deprecated method. find an alternative
         Pageable pageable = new PageRequest(pageStart, limit);
 
         ChannelEntity channelEntity = new ChannelEntity();
@@ -83,6 +71,21 @@ public class PostService {
         if (list.isEmpty())
             return null;
 
+        return posts(list);
+    }
+
+    public List<Post> getFeed(User user){
+        UserEntity userEntity = new UserEntity();
+        userEntity.setId(user.getId());
+        List<PostEntity> list = postRepository.getFeed(userEntity);
+
+        if (list.isEmpty())
+            return null;
+
+        return posts(list);
+    }
+
+    private List<Post> posts(List<PostEntity> list){
         List<Post> posts = new ArrayList<>();
         for (PostEntity e : list){
             Post p = new Post();
@@ -99,6 +102,4 @@ public class PostService {
 
         return posts;
     }
-
-
 }

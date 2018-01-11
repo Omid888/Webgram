@@ -3,6 +3,7 @@ package ir.webgram.model.repository;
 import ir.webgram.model.entity.ChannelEntity;
 import ir.webgram.model.entity.PostEntity;
 import ir.webgram.model.entity.UserEntity;
+import ir.webgram.model.repository.custom.PostRepositoryCustom;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,7 +17,7 @@ import java.util.List;
 /**
  * Created by Saeed on 12/23/2017.
  */
-public interface PostRepository extends JpaRepository<PostEntity, Integer>, CrudRepository<PostEntity, Integer>{
+public interface PostRepository extends JpaRepository<PostEntity, Integer>, CrudRepository<PostEntity, Integer>, PostRepositoryCustom{
 
     @Transactional
     PostEntity save(PostEntity post);

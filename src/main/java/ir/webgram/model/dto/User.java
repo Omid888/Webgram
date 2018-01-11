@@ -20,7 +20,7 @@ public class User {
 //    private List<Post> postsRead;
 
     public User() {
-        posts = new ArrayList<>();
+        posts = null;
         channels = new ArrayList<>();
     }
 

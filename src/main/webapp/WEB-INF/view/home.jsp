@@ -16,11 +16,35 @@
 <h1>Hello ${user.name}</h1>
 <div>
 <h2>Home</h2>
-<h3>
-    <c:forEach items="${user.posts}" var="post">
-        <li> <a href="<c:out value="/post/${post.title}"/>">${post.title}</a></li>
-    </c:forEach>
-</h3>
+
+    <h4>
+        <c:choose>
+            <c:when test="${user.posts == null}">
+                channel has no any post
+            </c:when>
+            <c:otherwise>
+                <c:forEach items="${user.posts}" var="p">
+                    writer: ${p.writerName}
+                    <br/>
+                    title: ${p.title}
+                    <br/>
+                    content: ${p.content}
+                    <br/>
+                    <img src="<c:out value="${p.imageUrl}"/>">
+                    <br/>
+                    date: ${p.date}
+                    <br/>
+                    likes: ${p.likes} reads: ${p.reads}
+                    <br/>
+                    <a href="<c:out value="${p.url}"/>">${p.url}</a>
+                    <br/>
+                    -----------------------------------------------------
+                    <br/>
+                </c:forEach>
+            </c:otherwise>
+        </c:choose>
+    </h4>
+
 </div>
 <div>
     <h2>Channels</h2>

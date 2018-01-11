@@ -46,7 +46,7 @@ public class PostController {
         post.setWriterId(user.getId());
 
         if (haveContent(post)){
-//            postService.save(post);
+            postService.save(post);
             modelAndView.setViewName("showPost");
             modelAndView.addObject("post", post);
             modelAndView.addObject("channel", channel);
@@ -74,17 +74,22 @@ public class PostController {
             return false;
         }
 
-        Element elements = document.getElementsByTag("body").get(0);
+        Element element = document.getElementsByTag("body").get(0);
 
-//        for (Element e : elements.getAllElements()){
-//            if (e.tagName().equals("header")) {
-//                System.out.println("saaaaaaaaaaaaaaaaag");
-//                e.remove();
-//            }
-//        }
+        for (Element e : element.getAllElements()){
+            if (e.tagName().equals("header")) {
+                e.remove();
+            }
+        }
 
-        imgUrl = elements.getElementsByTag("img").get(0).attr("abs:src");
-        content = elements.getElementsByTag("p").get(0).text();
+        try {
+            // TODO: 1/11/2018 this is a shit!!!!
+            imgUrl = element.getElementsByTag("img").get(0).attr("abs:src");
+            content = element.getElementsByTag("p").get(0).text();
+        }catch (Exception e){
+            return false;
+        }
+
 
         if (content.length() > 180){
             content = content.substring(0,180) + "...";

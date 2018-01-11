@@ -3,6 +3,7 @@ package ir.webgram.controller;
 import ir.webgram.model.dto.Channel;
 import ir.webgram.model.dto.Signup;
 import ir.webgram.model.dto.User;
+import ir.webgram.model.service.PostService;
 import ir.webgram.model.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,6 +25,9 @@ public class SignupController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private PostService postService;
 
     @RequestMapping(path = "/signup", method = RequestMethod.GET)
     protected ModelAndView signup(HttpSession session){
@@ -66,6 +70,7 @@ public class SignupController {
 
         User user = userService.save(signupUser);
 
+        user.setPosts(postService.getFeed(user));
         session.setAttribute("user", user);
         System.out.println("user id: "+user.getId());
 
