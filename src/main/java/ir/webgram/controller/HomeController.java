@@ -8,9 +8,12 @@ import ir.webgram.model.repository.UserRepository;
 import ir.webgram.model.service.ChannelService;
 import ir.webgram.model.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
@@ -39,7 +42,7 @@ public class HomeController {
         User user = (User) session.getAttribute("user");
         List<Post> posts = null;
         if (!user.getChannels().isEmpty()){
-            posts = postService.getFeed(user);
+            posts = postService.getFeed(user, 0, 10);
         }
         user.setPosts(posts);
         user.setChannels(channelService.findByMemberId(user.getId()));

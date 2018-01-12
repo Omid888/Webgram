@@ -74,10 +74,10 @@ public class PostService {
         return posts(list);
     }
 
-    public List<Post> getFeed(User user){
+    public List<Post> getFeed(User user, Integer start, Integer size){
         UserEntity userEntity = new UserEntity();
         userEntity.setId(user.getId());
-        List<PostEntity> list = postRepository.getFeed(userEntity);
+        List<PostEntity> list = postRepository.getFeed(userEntity, start, size);
 
         if (list.isEmpty())
             return null;

@@ -10,5 +10,5 @@ import java.util.List;
  */
 public interface PostRepositoryCustom {
 
-    List<PostEntity> getFeed(UserEntity userEntity);
+    List<PostEntity> getFeed(UserEntity userEntity, Integer start, Integer size);
 }

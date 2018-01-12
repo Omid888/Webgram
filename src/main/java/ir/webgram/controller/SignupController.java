@@ -70,7 +70,6 @@ public class SignupController {
 
         User user = userService.save(signupUser);
 
-        user.setPosts(postService.getFeed(user));
         session.setAttribute("user", user);
         System.out.println("user id: "+user.getId());
 

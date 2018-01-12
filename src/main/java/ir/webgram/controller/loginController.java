@@ -55,7 +55,7 @@ public class loginController {
                 return "login";
             } else {
                 user.setChannels(channelService.findByMemberId(user.getId()));
-                user.setPosts(postService.getFeed(user));
+                user.setPosts(postService.getFeed(user, 0, 10));
                 session.setAttribute("user", user);
                 model.addAttribute("channel", new Channel());
                 return "home";
