@@ -2,6 +2,7 @@ package ir.webgram.model.repository;
 
 import ir.webgram.model.entity.ChannelEntity;
 import ir.webgram.model.entity.UserEntity;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,4 +23,8 @@ public interface ChannelRepository extends CrudRepository<ChannelEntity, Integer
 
     @Transactional(readOnly = true)
     List<ChannelEntity> findByCreator(UserEntity userEntity);
+
+    @Transactional(readOnly = true)
+//    @Query()
+    List<ChannelEntity> findByNameContains(String name);
 }

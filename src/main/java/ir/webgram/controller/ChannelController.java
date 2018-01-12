@@ -10,7 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -46,8 +48,41 @@ public class ChannelController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/channel/search", method = RequestMethod.GET)
+    public  ModelAndView searchChannel(){
+        String name = "";
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("showChannel");
+
+        List<Channel> channels = channelService.findByNameContains(name);
+        modelAndView.addObject("channels", channels);
+
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/channel/{id}/join", method = RequestMethod.GET)
+    public void joinChannel(@PathVariable(name = "id")Integer id, HttpSession session, HttpServletResponse response){
+        User user = (User) session.getAttribute("user");
+        Channel channel = new Channel();
+        channel.setId(id);
+        if (channelService.joinChannel(user, channel, Boolean.FALSE)){
+            try {
+                user.addChannel(channel);
+                response.sendRedirect("/api/channel/"+id);
+            } catch (IOException e){
+                e.printStackTrace();
+            }
+        }else{
+            try {
+                response.sendRedirect("/api/home");
+            } catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+    }
+
     @RequestMapping(value = "/channel/{id}", method = RequestMethod.GET)
-    public ModelAndView channel(@PathVariable(name = "id")Integer id, HttpSession session,
+    public ModelAndView channel(@PathVariable(name = "id")Integer id,
                                 @RequestParam(name = "start", defaultValue = "0" ,required = false)Integer start,
                                 @RequestParam(name = "size", defaultValue = "10", required = false)Integer size){
         Channel channel = channelService.find(id);

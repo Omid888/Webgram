@@ -70,6 +70,11 @@
     <br/>
     <input type="submit" name="newChannel" value="newChannel" />
 </form:form>
+<div>
+    <form:form name="searchChannel" action="${pageContext.request.contextPath}/api/channel/search" method="get">
+        <input type="submit" value="show all channels"/>
+    </form:form>
+</div>
 <a href="/logout">Logout</a>
 </body>
 </html>

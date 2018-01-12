@@ -20,7 +20,6 @@ public class Channel {
     private List<Post> posts;
 
     public Channel() {
-        posts = new ArrayList<>();
     }
 
     public Integer getId() {

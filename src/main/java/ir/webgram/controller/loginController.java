@@ -3,6 +3,7 @@ package ir.webgram.controller;
 import ir.webgram.model.dto.Channel;
 import ir.webgram.model.dto.Login;
 import ir.webgram.model.dto.User;
+import ir.webgram.model.service.ChannelService;
 import ir.webgram.model.service.MembershipService;
 import ir.webgram.model.service.PostService;
 import ir.webgram.model.service.UserService;
@@ -31,7 +32,7 @@ public class loginController {
     private PostService postService;
 
     @Autowired
-    private MembershipService membershipService;
+    private ChannelService channelService;
 
     @RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
     protected String index(HttpSession session, Model model){
@@ -53,7 +54,7 @@ public class loginController {
                 model.addAttribute("message", "username or password incorrect!!");
                 return "login";
             } else {
-                user.setChannels(membershipService.findAllChannelByUserId(user.getId()));
+                user.setChannels(channelService.findByMemberId(user.getId()));
                 user.setPosts(postService.getFeed(user));
                 session.setAttribute("user", user);
                 model.addAttribute("channel", new Channel());

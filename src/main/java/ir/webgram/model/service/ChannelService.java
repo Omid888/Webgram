@@ -1,6 +1,7 @@
 package ir.webgram.model.service;
 
 import ir.webgram.model.dto.Channel;
+import ir.webgram.model.dto.User;
 import ir.webgram.model.entity.ChannelEntity;
 import ir.webgram.model.entity.UserEntity;
 import ir.webgram.model.repository.ChannelRepository;
@@ -42,6 +43,15 @@ public class ChannelService {
         return null;
     }
 
+    public Boolean joinChannel(User user, Channel channel, Boolean writer){
+        UserEntity userEntity = new UserEntity();
+        userEntity.setId(user.getId());
+        ChannelEntity channelEntity = new ChannelEntity();
+        channelEntity.setId(channel.getId());
+
+        return membershipService.joinChannel(userEntity, channelEntity, writer);
+    }
+
     public Channel find(Integer id){
         ChannelEntity entity = channelRepository.findById(id).get();
 
@@ -53,14 +63,26 @@ public class ChannelService {
         return channel;
     }
 
-    public List<Channel> findByCreatorId(Integer userId){
-        List<Channel> channels = null;
+    public List<Channel> findByMemberId(Integer userId){
+        return membershipService.findAllChannelByUserId(userId);
+    }
 
+    public List<Channel> findByCreatorId(Integer userId){
         UserEntity userEntity = new UserEntity();
         userEntity.setId(userId);
 
         List<ChannelEntity> list = channelRepository.findByCreator(userEntity);
 
+        return channels(list);
+    }
+
+    public List<Channel> findByNameContains(String name){
+        List<ChannelEntity> list = channelRepository.findByNameContains(name);
+        return channels(list);
+    }
+
+    private List<Channel> channels(List<ChannelEntity> list){
+        List<Channel> channels = null;
         if (!list.isEmpty()){
             channels = new ArrayList<>();
             for (ChannelEntity e : list){
@@ -68,6 +90,11 @@ public class ChannelService {
                 channel.setId(e.getId());
                 channel.setName(e.getName());
                 channel.setDate(e.getDate());
+
+                User user = new User();
+                user.setId(e.getCreator().getId());
+                user.setName(e.getCreator().getName());
+                channel.setCreator(user);
 
                 channels.add(channel);
             }

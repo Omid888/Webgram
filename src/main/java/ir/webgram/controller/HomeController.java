@@ -5,6 +5,7 @@ import ir.webgram.model.dto.Post;
 import ir.webgram.model.dto.User;
 import ir.webgram.model.entity.UserEntity;
 import ir.webgram.model.repository.UserRepository;
+import ir.webgram.model.service.ChannelService;
 import ir.webgram.model.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,6 +28,8 @@ public class HomeController {
     @Autowired
     private PostService postService;
 
+    @Autowired
+    private ChannelService channelService;
 
     @RequestMapping(path = "/home", method = RequestMethod.GET)
     protected ModelAndView home(HttpSession session){
@@ -39,6 +42,7 @@ public class HomeController {
             posts = postService.getFeed(user);
         }
         user.setPosts(posts);
+        user.setChannels(channelService.findByMemberId(user.getId()));
         modelAndView.addObject("channel", new Channel());
         return modelAndView;
     }

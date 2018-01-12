@@ -20,8 +20,6 @@ public class User {
 //    private List<Post> postsRead;
 
     public User() {
-        posts = null;
-        channels = new ArrayList<>();
     }
 
     public Integer getId() {
