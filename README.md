@@ -1,4 +1,4 @@
-This is a web application, developed with spring-mvc, bootstrap and query to implement a very simple and basic social network, where people can create some channels or join them to see what others have been shared or vice versa..
+This is a web application, developed with spring-mvc, bootstrap and Jquery to implement a very simple and basic social network, where people can create some channels or join them to see what others have been shared or vice versa..
 
 Rules are simple:
 1)Every channel is public for visiting and joining by every user, but only the channel's admin can upload posts.
