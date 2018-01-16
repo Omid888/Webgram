@@ -57,7 +57,7 @@
 
             <div class="card card-body border-light mb-3 ">
 
-                <h5>your channels:</h5>
+                <h5>Your channels:</h5>
                 <c:choose>
                     <c:when test="${user.channels == null}">
                         <h5>No channels found, Join one if you wish..</h5>
@@ -75,14 +75,12 @@
             </div>
             <div class="card card-body border-light mb-3 ">
 
-                <h5>you can create one..</h5>
-                <br/>
+                <h5>You can create one..</h5>
                 <form:form name="newChannelForm" modelAttribute="channel"
                            action="${pageContext.request.contextPath}/api/channel" method="post">
-                    Enter a name:&nbsp; <form:input id="name" path="name" name="name"/>
+                    Enter a name: <form:input id="name" path="name" name="name"/>
                     <br/>
-                    <br/>
-                    <input style="color: green" type="submit" name="newChannel" value="new channel"/>
+                    <input type="submit" name="newChannel" value="newChannel"/>
                 </form:form>
             </div>
         </div>
@@ -97,7 +95,7 @@
                         <c:forEach items="${user.posts}" var="p">
                             <div class="card card-body border-light mb-3 ">
 
-                                <h4 style="text-align: center"><img style="max-height: 500px; max-width: 800px" src="<c:out value="${p.imageUrl}"/> " ></h4>
+                                <h4 style="text-align: center"><img src="<c:out value="${p.imageUrl}"/>"></h4>
                                 <br/>
                                 writer: ${p.writerName}
                                 <br/>
@@ -107,13 +105,11 @@
                                 <br/>
                                 date: ${p.date}
                                 <br/>
-                                likes: ${p.likes} reads: ${p.reads}
+                                likes: ${p.likes}
                                 <br/>
                                 <a href="<c:out value="${p.url}"/>">${p.url}</a>
                                 <br/>
-                                <a href="<c:out value="/api/post/${p.id}/like"/>">like</a>
-                                <br/>
-                                liked: ${p.liked}
+                                <button class="col-lg-2 btn btn-primary showhidereply">Like</button>
                             </div>
                             <br/>
 
@@ -153,7 +149,7 @@
                         for (i = 0; i < msg.length; i++) {
                             html = '<div class="card card-body border-light mb-3 ">\n' +
                                 '\n' +
-                                '<h4 style="text-align: center"><img style="max-height: 500px; max-width: 800px" src="' + msg[i].imageUrl + '"/>"></h4>\n' +
+                                '<h4 style="text-align: center"><img src="' + msg[i].imageUrl + '"/>"></h4>\n' +
                                 '<br/>\n' +
                                 'writer: ' + msg[i].writerName + '\n' +
                                 '<br/>\n' +
@@ -163,7 +159,7 @@
                                 '<br/>\n' +
                                 'date: ' + msg[i].date + '\n' +
                                 '<br/>\n' +
-                                'likes: ' + msg[i].likes + ' reads: ' + msg[i].reads + '\n' +
+                                'likes: ' + msg[i].likes + '\n' +
                                 '<br/>\n' +
                                 '<a href="' + msg[i].url + '">' + msg[i].url + '</a>\n' +
                                 '<br/>\n' +
@@ -177,6 +173,33 @@
                 });
             }
         });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".showhidereply").click(function () {
+            //$.ajax{}
+            if ($(this).html() == "liked") {
+                $(this).html("like");
+                $(this).css('color','black');
+
+            } else{
+                $.ajax({
+                    type:"get",
+                    url:"api/post/"+2+"/like",
+                    success: function (res) {
+                        $(this).html("liked");
+                        $(this).css('color','green');
+                    },
+                    error: function (res) {
+                        alert(res);
+                    }
+                });
+
+
+            }
+        });
+
     });
 </script>
 </body>
