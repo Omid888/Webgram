@@ -96,7 +96,8 @@
                     <c:otherwise>
                         <c:forEach items="${user.posts}" var="p">
                             <div class="card card-body border-light mb-3 ">
-
+                                <a href="<c:out value="/api/channel/${p.channelId}"/>">${p.channelName}</a>
+                                <br/>
                                 <h4 style="text-align: center"><img style="max-height: 500px; max-width: 800px" src="<c:out value="${p.imageUrl}"/> " ></h4>
                                 <br/>
                                 writer: ${p.writerName}
