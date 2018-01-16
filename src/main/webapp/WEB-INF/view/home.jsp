@@ -76,11 +76,13 @@
             <div class="card card-body border-light mb-3 ">
 
                 <h5>you can create one..</h5>
+                <br/>
                 <form:form name="newChannelForm" modelAttribute="channel"
                            action="${pageContext.request.contextPath}/api/channel" method="post">
-                    Enter a name: <form:input id="name" path="name" name="name"/>
+                    Enter a name:&nbsp; <form:input id="name" path="name" name="name"/>
                     <br/>
-                    <input type="submit" name="newChannel" value="newChannel"/>
+                    <br/>
+                    <input style="color: green" type="submit" name="newChannel" value="new channel"/>
                 </form:form>
             </div>
         </div>
@@ -95,7 +97,7 @@
                         <c:forEach items="${user.posts}" var="p">
                             <div class="card card-body border-light mb-3 ">
 
-                                <h4 style="text-align: center"><img src="<c:out value="${p.imageUrl}"/>"></h4>
+                                <h4 style="text-align: center"><img style="max-height: 500px; max-width: 800px" src="<c:out value="${p.imageUrl}"/> " ></h4>
                                 <br/>
                                 writer: ${p.writerName}
                                 <br/>
@@ -109,6 +111,7 @@
                                 <br/>
                                 <a href="<c:out value="${p.url}"/>">${p.url}</a>
                                 <br/>
+                                <a href="<c:out value="/api/post/${p.id}/like"/>">like</a>
                             </div>
                             <br/>
 
@@ -148,7 +151,7 @@
                         for (i = 0; i < msg.length; i++) {
                             html = '<div class="card card-body border-light mb-3 ">\n' +
                                 '\n' +
-                                '<h4 style="text-align: center"><img src="' + msg[i].imageUrl + '"/>"></h4>\n' +
+                                '<h4 style="text-align: center"><img style="max-height: 500px; max-width: 800px" src="' + msg[i].imageUrl + '"/>"></h4>\n' +
                                 '<br/>\n' +
                                 'writer: ' + msg[i].writerName + '\n' +
                                 '<br/>\n' +

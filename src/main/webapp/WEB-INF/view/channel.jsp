@@ -70,13 +70,15 @@
                 <form:form
                         action="${pageContext.request.contextPath}/api/post?channelId=${channel.id}&channelName=${channel.name}"
                         method="post" modelAttribute="post">
-                    title:
+                    title:&nbsp; &nbsp;
                     <form:input path="title"/>
                     <br/>
-                    url:
+                    <br/>
+                    url:&nbsp; &nbsp; &nbsp;
                     <form:input path="url"/>
                     <br/>
-                    <input type="submit" name="new post"/>
+                    <br/>
+                    <input style="color: green" type="submit" name="new post" value="send"/>
                 </form:form>
                 <span style="color: green;">${message}</span>
 
@@ -93,7 +95,7 @@
                         <c:forEach items="${posts}" var="p">
                             <div class="card card-body border-light mb-3 " style="font-size: large">
 
-                                <h4 style="text-align: center"><img src="<c:out value="${p.imageUrl}"/>"></h4>
+                                <h4 style="text-align: center"><img style="max-height: 500px; max-width: 800px" src="<c:out value="${p.imageUrl}"/>" class="img-responsive"></h4>
                                 <br/>
                                 writer: ${p.writerName}
                                 <br/>
