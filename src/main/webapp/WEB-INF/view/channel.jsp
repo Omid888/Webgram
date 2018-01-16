@@ -85,7 +85,7 @@
             </div>
         </div>
         <div class="col-lg-8">
-            <h2 style="text-align: center;color: #000000">Channel name:${channel.name}</h2>
+            <h2 style="text-align: center;color: #000000">${channel.name}</h2>
             <h4>
                 <c:choose>
                     <c:when test="${posts == null}">
