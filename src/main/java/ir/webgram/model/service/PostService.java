@@ -26,6 +26,9 @@ public class PostService {
     @Autowired
     private PostRepository postRepository;
 
+    @Autowired
+    private FavoriteService favoriteService;
+
     public Post save (Post post){
         PostEntity entity = new PostEntity();
         entity.setTitle(post.getTitle());
@@ -96,6 +99,10 @@ public class PostService {
             p.setImageUrl(e.getImageUrl());
             p.setDate(e.getDate());
             p.setWriterName(e.getWriter().getName());
+            p.setChannelId(e.getChannel().getId());
+            p.setChannelName(e.getChannel().getName());
+
+            p.setLikes(favoriteService.likes(e));
 
             posts.add(p);
         }

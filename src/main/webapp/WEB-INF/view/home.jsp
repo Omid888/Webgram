@@ -198,6 +198,8 @@
 
                                 <h4 style="text-align: center"><img src="<c:out value="${p.imageUrl}"/>"></h4>
                                 <br/>
+                                <a href="<c:out value="/api/channel/${p.channelId}"/>">${p.channelName}</a>
+                                <br/>
                                 writer: ${p.writerName}
                                 <br/>
                                 title: ${p.title}
@@ -210,6 +212,7 @@
                                 <br/>
                                 <a href="<c:out value="${p.url}"/>">${p.url}</a>
                                 <br/>
+                                <a href="<c:out value="/api/post/${p.id}/like"/>">like</a>
                             </div>
                             <br/>
 
