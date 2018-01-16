@@ -74,4 +74,18 @@ public class MembershipService {
 
         return channels;
     }
+
+    public Integer membersNumber(Integer channelId){
+        return Integer.parseInt(membershipRepository.countAllByChannelId(channelId).toString());
+    }
+
+    public Boolean isJoined(Integer userId, Integer channelId){
+        UserEntity user = new UserEntity();
+        user.setId(userId);
+
+        ChannelEntity channel = new ChannelEntity();
+        channel.setId(channelId);
+
+        return membershipRepository.isExists(user, channel)>0L;
+    }
 }

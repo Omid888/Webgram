@@ -109,4 +109,8 @@ public class PostService {
 
         return posts;
     }
+
+    public Integer postsNumber(Integer channelId){
+        return Integer.parseInt(postRepository.countAllByChannelId(channelId).toString());
+    }
 }

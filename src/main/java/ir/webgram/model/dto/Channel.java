@@ -1,8 +1,6 @@
 package ir.webgram.model.dto;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by Saeed on 12/21/2017.
@@ -17,7 +15,10 @@ public class Channel {
 
     private User creator;
 
-    private List<Post> posts;
+    private Integer members;
+    private Integer postsNumber;
+    private Boolean joined;
+
 
     public Channel() {
     }
@@ -54,11 +55,27 @@ public class Channel {
         this.creator = creator;
     }
 
-    public List<Post> getPosts() {
-        return posts;
+    public Integer getMembers() {
+        return members;
     }
 
-    public void setPosts(List<Post> posts) {
-        this.posts = posts;
+    public void setMembers(Integer members) {
+        this.members = members;
+    }
+
+    public Integer getPostsNumber() {
+        return postsNumber;
+    }
+
+    public void setPostsNumber(Integer postsNumber) {
+        this.postsNumber = postsNumber;
+    }
+
+    public Boolean getJoined() {
+        return joined;
+    }
+
+    public void setJoined(Boolean joined) {
+        this.joined = joined;
     }
 }

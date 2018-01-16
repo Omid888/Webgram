@@ -17,7 +17,9 @@ public class Post {
     private Date date;
 
     private Integer likes;
+    private Boolean liked;
     private Integer reads;
+
 
     private Integer writerId;
     private String writerName;
@@ -81,6 +83,14 @@ public class Post {
 
     public void setLikes(Integer likes) {
         this.likes = likes;
+    }
+
+    public Boolean getLiked() {
+        return liked;
+    }
+
+    public void setLiked(Boolean liked) {
+        this.liked = liked;
     }
 
     public Integer getReads() {

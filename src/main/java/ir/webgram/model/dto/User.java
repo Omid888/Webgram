@@ -59,6 +59,9 @@ public class User {
     }
 
     public void addChannel(Channel channel){
+        if (channels==null){
+            channels = new ArrayList<>();
+        }
         channels.add(channel);
     }
 }

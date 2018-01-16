@@ -25,6 +25,9 @@ public class ChannelService {
     @Autowired
     private MembershipService membershipService;
 
+    @Autowired
+    private PostService postService;
+
     public Channel save(Channel channel){
         ChannelEntity channelEntity = new ChannelEntity();
         channelEntity.setName(channel.getName());
@@ -76,9 +79,31 @@ public class ChannelService {
         return channels(list);
     }
 
-    public List<Channel> findByNameContains(String name){
+    public List<Channel> findByNameContains(String name, User user){
         List<ChannelEntity> list = channelRepository.findByNameContains(name);
-        return channels(list);
+
+        List<Channel> channels = null;
+        if (!list.isEmpty()){
+            channels = new ArrayList<>();
+            for (ChannelEntity e : list){
+                Channel channel = new Channel();
+                channel.setId(e.getId());
+                channel.setName(e.getName());
+                channel.setDate(e.getDate());
+
+                User creator = new User();
+                creator.setId(e.getCreator().getId());
+                creator.setName(e.getCreator().getName());
+                channel.setCreator(creator);
+
+                channel.setMembers(membershipService.membersNumber(e.getId()));
+                channel.setPostsNumber(postService.postsNumber(e.getId()));
+                channel.setJoined(membershipService.isJoined(user.getId(), e.getId()));
+
+                channels.add(channel);
+            }
+        }
+        return channels;
     }
 
     private List<Channel> channels(List<ChannelEntity> list){

@@ -49,12 +49,14 @@ public class ChannelController {
     }
 
     @RequestMapping(value = "/channel/search", method = RequestMethod.GET)
-    public  ModelAndView searchChannel(){
+    public  ModelAndView searchChannel(HttpSession session){
         String name = "";
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("showChannel");
 
-        List<Channel> channels = channelService.findByNameContains(name);
+        User user = (User) session.getAttribute("user");
+
+        List<Channel> channels = channelService.findByNameContains(name, user);
         modelAndView.addObject("channels", channels);
 
         return modelAndView;

@@ -9,24 +9,20 @@
         body {
             background-image: url("/resources/background.png");
         }
-
         @font-face {
             font-family: Bangers;
             src: url("/resources/Bangers-Regular.ttf");
         }
-
         @font-face {
             font-family: Sofia;
             src: url("/resources/Sofia/Sofia-Regular.ttf");
         }
-
         @font-face {
             font-family: Cinzel Decorative;
             src: url("/resources/Cinzel_Decorative/CinzelDecorative-Regular.ttf");
         }
     </style>
     <link rel="icon" href="/resources/favicon.png">
-
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -35,7 +31,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
           integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-
+ 
     <title>Pynii</title>
 </head>
 <body>
@@ -70,8 +66,10 @@
                 </c:choose>
 
                 <br/>
-                <a style="color: darkolivegreen;font-size: large" href="/api/channel/search">See All Other Channels</a>
 
+			<a style="color: darkolivegreen;font-size: large" href="/api/channel/search">See All Other Channels</a>
+				
+				
             </div>
             <div class="card card-body border-light mb-3 ">
 
@@ -97,6 +95,8 @@
 
                                 <h4 style="text-align: center"><img src="<c:out value="${p.imageUrl}"/>"></h4>
                                 <br/>
+                                <a href="<c:out value="/api/channel/${p.channelId}"/>">${p.channelName}</a>
+                                <br/>
                                 writer: ${p.writerName}
                                 <br/>
                                 title: ${p.title}
@@ -109,6 +109,7 @@
                                 <br/>
                                 <a href="<c:out value="${p.url}"/>">${p.url}</a>
                                 <br/>
+                                <a href="<c:out value="/api/post/${p.id}/like"/>">like</a>
                             </div>
                             <br/>
 
@@ -117,6 +118,34 @@
                 </c:choose>
             </h4>
         </div>
+        <%--<div class="col-lg-3">--%>
+
+
+        <%--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut--%>
+        <%--labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi--%>
+        <%--ut aliquip ex--%>
+        <%--ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu--%>
+        <%--fugiat nulla--%>
+        <%--pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim--%>
+        <%--id est--%>
+        <%--laborum.--%>
+        <%--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et--%>
+        <%--dolore magna--%>
+        <%--aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo--%>
+        <%--consequat.--%>
+        <%--Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.--%>
+        <%--Excepteur--%>
+        <%--sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.--%>
+
+        <%--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et--%>
+        <%--dolore magna--%>
+        <%--aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo--%>
+        <%--consequat.--%>
+        <%--Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.--%>
+        <%--Excepteur--%>
+        <%--sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.--%>
+        <%--</p>--%>
+        <%--</div>--%>
     </div>
 </div>
 
@@ -129,50 +158,22 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
         integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
         crossorigin="anonymous"></script>
-
 <script>
-    $(document).ready(function () {
-        var lastrecievednumber = 10;
-        $(window).scroll(function () {
-            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-                $.ajax({
-                    type: "get",
-                    url: "/api/home/post",
-                    data: {
-                        start: lastrecievednumber,
-                        size: 10
-                    },
-                    success: function (msg) {
-//                    alert(msg[0].content);
-//                    $('#target').append(msg[0].content);
-                        for (i = 0; i < msg.length; i++) {
-                            html = '<div class="card card-body border-light mb-3 ">\n' +
-                                '\n' +
-                                '<h4 style="text-align: center"><img src="' + msg[i].imageUrl + '"/>"></h4>\n' +
-                                '<br/>\n' +
-                                'writer: ' + msg[i].writerName + '\n' +
-                                '<br/>\n' +
-                                'title: ' + msg[i].title + '\n' +
-                                '<br/>\n' +
-                                'caption: ' + msg[i].content + '\n' +
-                                '<br/>\n' +
-                                'date: ' + msg[i].date + '\n' +
-                                '<br/>\n' +
-                                'likes: ' + msg[i].likes + ' reads: ' + msg[i].reads + '\n' +
-                                '<br/>\n' +
-                                '<a href="' + msg[i].url + '">' + msg[i].url + '</a>\n' +
-                                '<br/>\n' +
-                                '</div>\n' +
-                                '<br/>';
-                            $('#target').append(html);
-                            lastrecievednumber += 10;
-                        }
-
-                    }
-                });
-            }
-        });
-    });
-</script>
+    $(window).scroll(function () {
+        if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+            //alert("bottom!");
+            $.ajax({
+                type: "get",
+                url: "/api/home/post",
+                data: {
+                    start: "1",
+                    size: "1"
+                },
+                success: function (msg) {
+                    // This needs to be implemented..
+                }
+            });
+        }
+    });</script>
 </body>
 </html>

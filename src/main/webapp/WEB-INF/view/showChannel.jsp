@@ -8,25 +8,88 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>search result</title>
-</head>
+
+<style>
+    body {
+        background-image: url("/resources/background.png");
+    }
+    @font-face {
+        font-family: Bangers;
+        src: url("/resources/Bangers-Regular.ttf");
+    }
+    @font-face {
+        font-family: Sofia;
+        src: url("/resources/Sofia/Sofia-Regular.ttf");
+    }
+    @font-face {
+        font-family: Cinzel Decorative;
+        src: url("/resources/Cinzel_Decorative/CinzelDecorative-Regular.ttf");
+    }
+</style>
+<link rel="icon" href="/resources/favicon.png">
+
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+      integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+<title>search result</title>
 <body>
-<div>
-    <h2>Channels</h2>
-    <h3>
+<div style="text-align: center;">
+    <h2>All Channels</h2>
+    <h5>
         <c:choose>
             <c:when test="${channels == null}">
                 no result
             </c:when>
             <c:otherwise>
-                <c:forEach items="${channels}" var="channel">
-                    <li>${channel.name} by ${channel.creator.name} [<a href="<c:out value="/api/channel/${channel.id}/join"/>">join</a>] </li>
-                </c:forEach>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                    </div>
+                    <div class="col-lg-4">
+                        <c:forEach items="${channels}" var="channel">
+
+                            <div class="card card-body border-light mb-3 ">
+
+                                <h3>${channel.name}</h3>
+                                <br/>
+                                <br/>
+                                Creator : ${channel.creator.name}
+                                <br/>
+                                Posts number : ${channel.postsNumber}
+                                <br/>
+                                Members: ${channel.members}
+                                <br/>
+                                <br/>
+
+                                <c:choose>
+                                    <c:when test="${channel.joined}">
+                                        <a href="<c:out value="/api/channel/${channel.id}"/>">Show</a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a href="<c:out value="/api/channel/${channel.id}/join"/>">join</a>
+                                    </c:otherwise>
+                                </c:choose>
+
+                            </div>
+                            <br/>
+
+                        </c:forEach>
+
+                        <a href="/api/home">home</a>
+
+                    </div>
+                    <div class="col-lg-4">
+                    </div>
+                </div>
             </c:otherwise>
         </c:choose>
-    </h3>
+    </h5>
 </div>
-<a href="/api/home">home</a>
+
 </body>
 </html>

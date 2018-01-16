@@ -31,4 +31,7 @@ public interface PostRepository extends JpaRepository<PostEntity, Integer>, Crud
     @Transactional(readOnly = true)
     @Query(value = "SELECT p FROM PostEntity p where p.channel = :ch order by p.date desc ")
     Page<PostEntity> findAllByChannel(@Param("ch")ChannelEntity channel, Pageable pageable);
+
+    @Transactional(readOnly = true)
+    Long countAllByChannelId(Integer channelId);
 }

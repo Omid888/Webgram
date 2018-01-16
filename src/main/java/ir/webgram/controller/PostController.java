@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Iterator;
 
 /**
  * Created by Saeed on 12/21/2017.
@@ -47,15 +48,15 @@ public class PostController {
 
         if (haveContent(post)){
             postService.save(post);
-            modelAndView.setViewName("showPost");
-            modelAndView.addObject("post", post);
+            modelAndView.setViewName("channel");
+            modelAndView.addObject("posts", postService.findByChannelId(channelId, 0, 10));
             modelAndView.addObject("channel", channel);
-            modelAndView.addObject("message", "new post added!");
+            modelAndView.addObject("message", "New Post Added!");
         }else {
-            modelAndView.setViewName("showPost");
-            modelAndView.addObject("post", null);
+            modelAndView.setViewName("channel");
+            modelAndView.addObject("posts", postService.findByChannelId(channelId, 0, 10));
             modelAndView.addObject("channel", channel);
-            modelAndView.addObject("message", "url has not any content!");
+            modelAndView.addObject("message", "Failed Operation!!!!");
         }
 
         return modelAndView;
@@ -64,8 +65,8 @@ public class PostController {
     // TODO: 1/7/2018 Jsoup connection methods impl JSOUP
     private boolean haveContent(Post post) {
         String url = post.getUrl();
-        String imgUrl;
-        String content;
+        String imgUrl = "";
+        String content = "";
         Document document;
 
         try {
@@ -76,18 +77,17 @@ public class PostController {
 
         Element element = document.getElementsByTag("body").get(0);
 
-        for (Element e : element.getAllElements()){
-            if (e.tagName().equals("header")) {
-                e.remove();
-            }
-        }
 
         try {
-            // TODO: 1/11/2018 this is a shit!!!!
-            imgUrl = element.getElementsByTag("img").get(0).attr("abs:src");
             content = element.getElementsByTag("p").get(0).text();
         }catch (Exception e){
+            post.setContent(content);
             return false;
+        }
+
+        Elements metaOgImage = document.select("meta[property=og:image]");
+        if (metaOgImage!=null) {
+            imgUrl = metaOgImage.attr("content");
         }
 
 
