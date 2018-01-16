@@ -3,18 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e0f1e7b3-b5a4-48dc-89d8-2dc7b945643c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ir/webgram/controller/ChannelController.java" afterPath="$PROJECT_DIR$/src/main/java/ir/webgram/controller/ChannelController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ir/webgram/controller/PostController.java" afterPath="$PROJECT_DIR$/src/main/java/ir/webgram/controller/PostController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ir/webgram/model/dto/Channel.java" afterPath="$PROJECT_DIR$/src/main/java/ir/webgram/model/dto/Channel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ir/webgram/model/dto/Post.java" afterPath="$PROJECT_DIR$/src/main/java/ir/webgram/model/dto/Post.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ir/webgram/model/dto/User.java" afterPath="$PROJECT_DIR$/src/main/java/ir/webgram/model/dto/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ir/webgram/model/repository/MembershipRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ir/webgram/model/repository/MembershipRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ir/webgram/model/repository/PostRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ir/webgram/model/repository/PostRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ir/webgram/model/service/ChannelService.java" afterPath="$PROJECT_DIR$/src/main/java/ir/webgram/model/service/ChannelService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ir/webgram/model/service/MembershipService.java" afterPath="$PROJECT_DIR$/src/main/java/ir/webgram/model/service/MembershipService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ir/webgram/model/service/PostService.java" afterPath="$PROJECT_DIR$/src/main/java/ir/webgram/model/service/PostService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/showChannel.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/showChannel.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -74,12 +63,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PostController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ir/webgram/controller/PostController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2880">
+              <caret line="178" column="0" lean-forward="true" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#h2#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h4#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h1#0;n#h4#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h4#0;n#div#0;n#h4#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1516137915793" expanded="true" signature="6136:6154" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -163,7 +173,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ir/webgram/model/repository/FavoriteRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/webgram/model/service/FavoriteService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/webgram/model/dto/User.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/ir/webgram/model/dto/Channel.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/webgram/model/dto/Post.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/webgram/model/repository/PostRepository.java" />
@@ -175,6 +184,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/showChannel.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/channel.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/ir/webgram/controller/PostController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home.jsp" />
       </list>
     </option>
   </component>
@@ -518,7 +528,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="SearchEverywhereHistoryKey" value="pos&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/PostController.java&#10;chan&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/ChannelController.java&#10;hom&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/home.jsp&#10;show&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/showChannel.jsp&#10;PR&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/repository/PostRepository.java&#10;Post&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/service/PostService.java&#10;Fav&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/service/FavoriteService.java&#10;channe&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/ChannelController.java&#10;post&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/dto/Post.java&#10;chann&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/channel.jsp&#10;postS&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/service/PostService.java&#10;Res&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/RestfulController.java&#10;ساخص&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/showChannel.jsp&#10;home&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/HomeController.java&#10;jsp&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/home.jsp&#10;PosC&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/PostController.java&#10;disp&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/dispatcher-servlet.xml&#10;xml&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/web.xml&#10;postcont&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/PostController.java&#10;postc&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/PostController.java&#10;logi&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/loginController.java&#10;sho&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/showChannel.jsp&#10;login&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/loginController.java&#10;Mem&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/entity/relation/membership/Membership.java&#10;post &#9;PSI&#9;JAVA://ir.webgram.model.dto.Post&#10;porepo&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/repository/PostRepository.java&#10;log&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/loginController.java&#10;senRed&#9;PSI&#9;JAVA://javax.servlet.http.HttpServletResponse#sendRedirect&#10;Chan&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/ChannelController.java&#10;mem&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/entity/relation/membership/Membership.java&#10;chancon&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/ChannelController.java&#10;poscontr&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/PostController.java&#10;postRe&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/repository/custom/PostRepositoryCustomImpl.java&#10;PosRe&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/repository/custom/PostRepositoryCustomImpl.java&#10;sign&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/SignupController.java&#10;posco&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/PostController.java&#10;LOGIN&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/login.jsp&#10;cha&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/channel.jsp&#10;Cha&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/ChannelController.java&#10;spr&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/spring-data.xml&#10;homc&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/HomeController.java&#10;ho&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/home.jsp&#10;PostSe&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/service/PostService.java" />
+    <property name="SearchEverywhereHistoryKey" value="home&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/home.jsp&#10;pos&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/PostController.java&#10;chan&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/ChannelController.java&#10;hom&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/home.jsp&#10;show&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/showChannel.jsp&#10;PR&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/repository/PostRepository.java&#10;Post&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/service/PostService.java&#10;Fav&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/service/FavoriteService.java&#10;channe&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/ChannelController.java&#10;post&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/dto/Post.java&#10;chann&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/channel.jsp&#10;postS&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/service/PostService.java&#10;Res&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/RestfulController.java&#10;ساخص&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/showChannel.jsp&#10;jsp&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/home.jsp&#10;PosC&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/PostController.java&#10;disp&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/dispatcher-servlet.xml&#10;xml&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/web.xml&#10;postcont&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/PostController.java&#10;postc&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/PostController.java&#10;logi&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/loginController.java&#10;sho&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/showChannel.jsp&#10;login&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/loginController.java&#10;Mem&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/entity/relation/membership/Membership.java&#10;post &#9;PSI&#9;JAVA://ir.webgram.model.dto.Post&#10;porepo&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/repository/PostRepository.java&#10;log&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/loginController.java&#10;senRed&#9;PSI&#9;JAVA://javax.servlet.http.HttpServletResponse#sendRedirect&#10;Chan&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/ChannelController.java&#10;mem&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/entity/relation/membership/Membership.java&#10;chancon&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/ChannelController.java&#10;poscontr&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/PostController.java&#10;postRe&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/repository/custom/PostRepositoryCustomImpl.java&#10;PosRe&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/repository/custom/PostRepositoryCustomImpl.java&#10;sign&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/SignupController.java&#10;posco&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/PostController.java&#10;LOGIN&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/login.jsp&#10;cha&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/channel.jsp&#10;Cha&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/ChannelController.java&#10;spr&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/spring-data.xml&#10;homc&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/controller/HomeController.java&#10;ho&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/webapp/WEB-INF/view/home.jsp&#10;PostSe&#9;FILE&#9;file://C:/Users/Saeed/IdeaProjects/webgram_datatest/src/main/java/ir/webgram/model/service/PostService.java" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1215,7 +1225,7 @@
       <workItem from="1516024269575" duration="341000" />
       <workItem from="1516048684994" duration="599000" />
       <workItem from="1516103273572" duration="3735000" />
-      <workItem from="1516121924080" duration="14646000" />
+      <workItem from="1516121924080" duration="15057000" />
     </task>
     <task id="LOCAL-00001" summary="getFeed v1">
       <created>1515683940758</created>
@@ -1259,11 +1269,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516128644588</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="show channels &amp; jsoup improving &amp; show post">
+      <created>1516137798191</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1516137798191</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159912000" />
+    <option name="totallyTimeSpent" value="160323000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1317,6 +1334,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -1353,7 +1380,8 @@
     <MESSAGE value="/api/channel/{id}/post (RestfulController)" />
     <MESSAGE value="/resources/**" />
     <MESSAGE value="like" />
-    <option name="LAST_COMMIT_MESSAGE" value="like" />
+    <MESSAGE value="show channels &amp; jsoup improving &amp; show post" />
+    <option name="LAST_COMMIT_MESSAGE" value="show channels &amp; jsoup improving &amp; show post" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1445,18 +1473,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="134" column="34" lean-forward="false" selection-start-line="134" selection-start-column="34" selection-end-line="134" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/9aae6d1c/ec2e33db-ca43-4d25-b2d0-9d953a64afaa/webgram.post_tb">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1737,14 +1753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/showChannel.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
@@ -1776,6 +1784,38 @@
         <state relative-caret-position="289">
           <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/9aae6d1c/ec2e33db-ca43-4d25-b2d0-9d953a64afaa/webgram.post_tb">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2880">
+          <caret line="178" column="0" lean-forward="true" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#h2#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#h4#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#h4#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1516137915793" expanded="true" signature="6136:6154" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
