@@ -84,12 +84,14 @@ public class ChannelController {
     }
 
     @RequestMapping(value = "/channel/{id}", method = RequestMethod.GET)
-    public ModelAndView channel(@PathVariable(name = "id")Integer id,
+    public ModelAndView channel(@PathVariable(name = "id")Integer id, HttpSession session,
                                 @RequestParam(name = "start", defaultValue = "0" ,required = false)Integer start,
                                 @RequestParam(name = "size", defaultValue = "10", required = false)Integer size){
         Channel channel = channelService.find(id);
 
-        List<Post> posts = postService.findByChannelId(id, start, size);
+        User user = (User) session.getAttribute("user");
+
+        List<Post> posts = postService.findByChannelId(id, user.getId(), start, size);
 
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("channel");

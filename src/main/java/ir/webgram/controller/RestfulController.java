@@ -35,11 +35,11 @@ public class RestfulController {
     }
 
     @RequestMapping(value = "/channel/{id}/post", method = RequestMethod.GET)
-    public ResponseEntity<List<Post>> channel(@PathVariable(name = "id")Integer id,
+    public ResponseEntity<List<Post>> channel(@PathVariable(name = "id")Integer id, HttpSession session,
                                 @RequestParam(name = "start", defaultValue = "0" ,required = false)Integer start,
                                 @RequestParam(name = "size", defaultValue = "10", required = false)Integer size){
-
-        return new ResponseEntity<>(postService.findByChannelId(id, start, size), HttpStatus.OK);
+        User user = (User) session.getAttribute("user");
+        return new ResponseEntity<>(postService.findByChannelId(id, user.getId(), start, size), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/post/{id}/like", method = RequestMethod.GET)

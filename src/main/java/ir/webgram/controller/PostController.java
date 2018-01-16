@@ -49,12 +49,12 @@ public class PostController {
         if (haveContent(post)){
             postService.save(post);
             modelAndView.setViewName("channel");
-            modelAndView.addObject("posts", postService.findByChannelId(channelId, 0, 10));
+            modelAndView.addObject("posts", postService.findByChannelId(channelId, user.getId(),0, 10));
             modelAndView.addObject("channel", channel);
             modelAndView.addObject("message", "New Post Added!");
         }else {
             modelAndView.setViewName("channel");
-            modelAndView.addObject("posts", postService.findByChannelId(channelId, 0, 10));
+            modelAndView.addObject("posts", postService.findByChannelId(channelId, user.getId(),0, 10));
             modelAndView.addObject("channel", channel);
             modelAndView.addObject("message", "Failed Operation!!!!");
         }

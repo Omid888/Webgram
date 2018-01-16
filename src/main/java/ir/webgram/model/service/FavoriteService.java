@@ -45,4 +45,13 @@ public class FavoriteService {
     public Integer likes(PostEntity post){
         return Integer.parseInt(repository.countAllByPostId(post.getId()).toString());
     }
+
+    public Boolean liked(Integer userId, Integer postId){
+        UserEntity u = new UserEntity();
+        u.setId(userId);
+
+        PostEntity p = new PostEntity();
+        p.setId(postId);
+        return repository.countAllByUserIdaAndPostId(u, p)>0L;
+    }
 }

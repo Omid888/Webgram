@@ -112,6 +112,8 @@
                                 <a href="<c:out value="${p.url}"/>">${p.url}</a>
                                 <br/>
                                 <a href="<c:out value="/api/post/${p.id}/like"/>">like</a>
+                                <br/>
+                                liked: ${p.liked}
                             </div>
                             <br/>
 

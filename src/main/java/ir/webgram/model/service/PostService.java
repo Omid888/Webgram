@@ -49,19 +49,7 @@ public class PostService {
         return post;
     }
 
-    public List<Post> findByChannelId(Integer channelId){
-        ChannelEntity channelEntity = new ChannelEntity();
-        channelEntity.setId(channelId);
-
-        List<PostEntity> list = postRepository.findAllByChannel(channelEntity);
-
-        if (list.isEmpty())
-            return null;
-
-        return posts(list);
-    }
-
-    public List<Post> findByChannelId(Integer channelId, Integer pageStart, Integer limit){
+    public List<Post> findByChannelId(Integer channelId, Integer userId, Integer pageStart, Integer limit){
         // TODO: 1/11/2018 deprecated method. find an alternative
         Pageable pageable = new PageRequest(pageStart, limit);
 
@@ -74,7 +62,7 @@ public class PostService {
         if (list.isEmpty())
             return null;
 
-        return posts(list);
+        return posts(list, userId);
     }
 
     public List<Post> getFeed(User user, Integer start, Integer size){
@@ -85,10 +73,10 @@ public class PostService {
         if (list.isEmpty())
             return null;
 
-        return posts(list);
+        return posts(list, user.getId());
     }
 
-    private List<Post> posts(List<PostEntity> list){
+    private List<Post> posts(List<PostEntity> list, Integer userId){
         List<Post> posts = new ArrayList<>();
         for (PostEntity e : list){
             Post p = new Post();
@@ -103,6 +91,7 @@ public class PostService {
             p.setChannelName(e.getChannel().getName());
 
             p.setLikes(favoriteService.likes(e));
+            p.setLiked(favoriteService.liked(userId, e.getId()));
 
             posts.add(p);
         }
