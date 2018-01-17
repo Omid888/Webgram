@@ -109,7 +109,20 @@
                                 <br/>
                                 <a href="<c:out value="${p.url}"/>">${p.url}</a>
                                 <br/>
-                                <button class="col-lg-2 btn btn-primary showhidereply">Like</button>
+                                <c:choose>
+                                    <c:when test="${p.liked == false}">
+
+                                        <button class="col-lg-2 btn btn-primary" onclick="like_func(${p.id})">
+                                            Like
+                                        </button>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <button class="col-lg-2 btn btn-primary" style="color: red"
+                                                onclick="like_func(${p.id})">
+                                            Liked
+                                        </button>
+                                    </c:otherwise>
+                                </c:choose>
                             </div>
                             <br/>
 
@@ -175,32 +188,28 @@
         });
     });
 </script>
+
 <script>
-    $(document).ready(function () {
-        $(".showhidereply").click(function () {
-            //$.ajax{}
-            if ($(this).html() == "liked") {
-                $(this).html("like");
-                $(this).css('color','black');
-
-            } else{
-                $.ajax({
-                    type:"get",
-                    url:"api/post/"+2+"/like",
-                    success: function (res) {
-                        $(this).html("liked");
-                        $(this).css('color','green');
-                    },
-                    error: function (res) {
-                        alert(res);
-                    }
-                });
-
-
-            }
-        });
-
-    });
+    function like_func(id) {
+//        if ($(this).html() == "Liked") {
+//            //send unlike ajax
+//            $(this).html("like");
+//            $(this).css('color', 'black');
+//
+//        } else {
+            $.ajax({
+                type: "get",
+                url: "api/post/" + id + "/like",
+                success: function (res) {
+                    $(this).html("Liked");
+                    $(this).css('color', 'red');
+                },
+                error: function (res) {
+                    alert(res[0]);
+                }
+            });
+      //  }
+    }
 </script>
 </body>
 </html>
